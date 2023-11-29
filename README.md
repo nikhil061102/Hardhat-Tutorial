@@ -4,10 +4,12 @@
 
 install extra libraries as suggested
 
+`npx hardhat node` for details of local blockchain
+
 Write contracts in `contracts` folder then `cd contracts` and then `npx hardhat compile`
 
-for testing : `npx hardhat test`
-
+for testing all : `npx hardhat test`
+for testing some particular file(s) : `npx hardhat test test/token2test.js`
 deploy locally : `npx hardhat run scripts/deploy.js` 
 
 ***Note*** : If you are using ethers version 6 or higher, dont use `token.address`. rather use `token.target`

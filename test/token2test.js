@@ -1,4 +1,4 @@
-const { expect } = require("chai");
+const { expect, assert } = require("chai");
 
 describe("Token Contract", function () {
   let Token, hardhatToken, owner, addr1, addr2, addrs;
@@ -13,6 +13,9 @@ describe("Token Contract", function () {
   describe("Check Deployment", function () {
     it("Should set the right owner", async function () {
       expect(await hardhatToken.owner()).to.equal(owner.address);
+    });
+    it("Test right owner using assert", async function () {
+      assert.equal(await hardhatToken.owner(),owner.address);
     });
     it("Should assign the total supply of tokens to the owner", async function () {
       const ownerBalance = await hardhatToken.balanceOf(owner.address);
